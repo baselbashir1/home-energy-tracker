@@ -28,6 +28,31 @@
             </ReqHistory>
           </value>
         </entry>
+        <entry key="1">
+          <value>
+            <ReqHistory>
+              <option name="body" value="" />
+              <option name="contentType" value="application/x-www-form-urlencoded" />
+              <option name="fileNames">
+                <array />
+              </option>
+              <option name="headers">
+                <map />
+              </option>
+              <option name="host" value="http://127.0.0.1:8080" />
+              <option name="id" value="1" />
+              <option name="method" value="GET" />
+              <option name="params">
+                <map>
+                  <entry key="id" value="1" />
+                </map>
+              </option>
+              <option name="res" value="{&quot;id&quot;:1,&quot;name&quot;:&quot;Mohammad Basel&quot;,&quot;surname&quot;:&quot;Bashir&quot;,&quot;email&quot;:&quot;eng.baselbashir@gmail.com&quot;,&quot;address&quot;:&quot;Malihah&quot;,&quot;alerting&quot;:false,&quot;energyAlertingThreshold&quot;:0.0}" />
+              <option name="time" value="2026-06-06 08:04:31" />
+              <option name="uri" value="/api/v1/user/{id}" />
+            </ReqHistory>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

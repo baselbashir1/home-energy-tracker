@@ -8,14 +8,14 @@ import org.springframework.stereotype.Service;
 public class UserMapperImpl implements UserMapper {
 
     @Override
-    public User mapToUser(UserDto userDto) {
+    public User mapToUser(UserDto dto) {
         return User.builder()
-                .name(userDto.getName())
-                .surname(userDto.getSurname())
-                .email(userDto.getEmail())
-                .address(userDto.getAddress())
-                .alerting(userDto.isAlerting())
-                .energyAlertingThreshold(userDto.getEnergyAlertingThreshold())
+                .name(dto.getName())
+                .surname(dto.getSurname())
+                .email(dto.getEmail())
+                .address(dto.getAddress())
+                .alerting(dto.isAlerting())
+                .energyAlertingThreshold(dto.getEnergyAlertingThreshold())
                 .build();
     }
 

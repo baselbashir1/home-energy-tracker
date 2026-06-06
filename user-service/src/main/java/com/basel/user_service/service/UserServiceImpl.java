@@ -17,11 +17,40 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
-    public UserDto createUser(UserDto userDto) {
-        log.info("Creating user: {}", userDto);
+    public UserDto createUser(UserDto dto) {
+        log.info("Creating user: {}", dto);
 
-        User user = userRepository.save(userMapper.mapToUser(userDto));
+        User user = userRepository.save(userMapper.mapToUser(dto));
 
         return userMapper.mapToUserDto(user);
+    }
+
+    @Override
+    public UserDto getUserById(Long userId) {
+        return userRepository.findById(userId)
+                .map(userMapper::mapToUserDto)
+                .orElse(null);
+    }
+
+    @Override
+    public void updateUser(Long userId, UserDto dto) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+
+        user.setName(dto.getName());
+        user.setSurname(dto.getSurname());
+        user.setEmail(dto.getEmail());
+        user.setAddress(dto.getAddress());
+        user.setAlerting(dto.isAlerting());
+        user.setEnergyAlertingThreshold(dto.getEnergyAlertingThreshold());
+
+        userRepository.save(user);
+    }
+
+    @Override
+    public void deleteUser(Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+        userRepository.delete(user);
     }
 }

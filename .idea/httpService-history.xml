@@ -128,6 +128,31 @@
             </ReqHistory>
           </value>
         </entry>
+        <entry key="5">
+          <value>
+            <ReqHistory>
+              <option name="body" value="" />
+              <option name="contentType" value="application/x-www-form-urlencoded" />
+              <option name="fileNames">
+                <array />
+              </option>
+              <option name="headers">
+                <map />
+              </option>
+              <option name="host" value="http://127.0.0.1:8080" />
+              <option name="id" value="5" />
+              <option name="method" value="GET" />
+              <option name="params">
+                <map>
+                  <entry key="id" value="1" />
+                </map>
+              </option>
+              <option name="res" value="{&quot;address&quot;:&quot;Malihah&quot;,&quot;alerting&quot;:false,&quot;email&quot;:&quot;eng.baselbashir@gmail.com&quot;,&quot;energyAlertingThreshold&quot;:0.0,&quot;id&quot;:1,&quot;name&quot;:&quot;Mohammad Basel&quot;,&quot;surname&quot;:&quot;Bashir&quot;}" />
+              <option name="time" value="2026-06-06 08:44:38" />
+              <option name="uri" value="/api/v1/user/{id}" />
+            </ReqHistory>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

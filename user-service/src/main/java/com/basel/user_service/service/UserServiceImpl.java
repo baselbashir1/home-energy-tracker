@@ -5,10 +5,8 @@ import com.basel.user_service.entity.User;
 import com.basel.user_service.mapper.UserMapper;
 import com.basel.user_service.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -18,10 +16,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto createUser(UserDto dto) {
-        log.info("Creating user: {}", dto);
-
         User user = userRepository.save(userMapper.mapToUser(dto));
-
         return userMapper.mapToUserDto(user);
     }
 

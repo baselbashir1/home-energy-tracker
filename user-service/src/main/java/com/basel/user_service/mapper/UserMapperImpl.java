@@ -31,4 +31,15 @@ public class UserMapperImpl implements UserMapper {
                 .energyAlertingThreshold(user.getEnergyAlertingThreshold())
                 .build();
     }
+
+    @Override
+    public User mapToExistingUser(User user, UserDto dto) {
+        user.setName(dto.getName());
+        user.setSurname(dto.getSurname());
+        user.setEmail(dto.getEmail());
+        user.setAddress(dto.getAddress());
+        user.setAlerting(dto.isAlerting());
+        user.setEnergyAlertingThreshold(dto.getEnergyAlertingThreshold());
+        return user;
+    }
 }

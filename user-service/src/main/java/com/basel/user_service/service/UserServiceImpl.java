@@ -32,14 +32,7 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new IllegalArgumentException("User not found"));
 
-        user.setName(dto.getName());
-        user.setSurname(dto.getSurname());
-        user.setEmail(dto.getEmail());
-        user.setAddress(dto.getAddress());
-        user.setAlerting(dto.isAlerting());
-        user.setEnergyAlertingThreshold(dto.getEnergyAlertingThreshold());
-
-        userRepository.save(user);
+        userRepository.save(userMapper.mapToExistingUser(user, dto));
     }
 
     @Override

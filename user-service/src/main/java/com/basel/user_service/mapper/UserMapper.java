@@ -7,4 +7,6 @@ public interface UserMapper {
     User mapToUser(UserDto dto);
 
     UserDto mapToUserDto(User user);
+
+    User mapToExistingUser(User user, UserDto dto);
 }

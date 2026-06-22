@@ -27,12 +27,11 @@ class DeviceServiceApplicationTests {
     @Test
     void createDevices() {
         for (int i = 1; i <= NUMBER_OF_DEVICES; i++) {
-            var device = Device.builder()
-                    .name("Device" + i)
-                    .type(DeviceType.values()[i % DeviceType.values().length])
-                    .location("Location" + ((i % 3) + 1))
-                    .userId((long) ((i % USERS) + 1))
-                    .build();
+            Device device = new Device();
+            device.setName("Device" + i);
+            device.setType(DeviceType.values()[i % DeviceType.values().length]);
+            device.setLocation("Location" + ((i % 3) + 1));
+            device.setUserId((long) ((i % USERS) + 1));
             deviceRepository.save(device);
         }
         log.info("Device Repository has been populated");

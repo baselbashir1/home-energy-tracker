@@ -25,14 +25,13 @@ class UserServiceApplicationTests {
     @Test
     void addUsersToDB() {
         for (int i = 1; i <= NUMBER_OF_USERS; i++) {
-            User user = User.builder()
-                    .name("User" + i)
-                    .surname("Surname" + i)
-                    .email("user" + i + "@example.com")
-                    .address(i + " Example St")
-                    .alerting(i % 2 == 0)
-                    .energyAlertingThreshold(1000.0 + i)
-                    .build();
+            User user = new User();
+            user.setName("User" + i);
+            user.setSurname("Surname" + i);
+            user.setEmail("user" + i + "@example.com");
+            user.setAddress(i + " Example St");
+            user.setAlerting(i % 2 == 0);
+            user.setEnergyAlertingThreshold(1000.0 + i);
             userRepository.save(user);
         }
         log.info("User Repository populated successfully");

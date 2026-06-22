@@ -3,10 +3,8 @@ package com.basel.user_service.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Getter
-@Setter
+@Data
 @Entity
-@Builder
 @Table(name = "user")
 @AllArgsConstructor
 @NoArgsConstructor

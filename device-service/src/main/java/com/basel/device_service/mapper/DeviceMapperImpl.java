@@ -9,31 +9,31 @@ public class DeviceMapperImpl implements DeviceMapper {
 
     @Override
     public Device mapToDevice(DeviceDto dto) {
-        return Device.builder()
-                .name(dto.getName())
-                .type(dto.getType())
-                .location(dto.getLocation())
-                .userId(dto.getUserId())
-                .build();
+        Device device = new Device();
+        device.setName(dto.name());
+        device.setType(dto.type());
+        device.setLocation(dto.location());
+        device.setUserId(dto.userId());
+        return device;
     }
 
     @Override
     public Device mapToExistingDevice(Device device, DeviceDto dto) {
-        device.setName(dto.getName());
-        device.setType(dto.getType());
-        device.setLocation(dto.getLocation());
-        device.setUserId(dto.getUserId());
+        device.setName(dto.name());
+        device.setType(dto.type());
+        device.setLocation(dto.location());
+        device.setUserId(dto.userId());
         return device;
     }
 
     @Override
     public DeviceDto mapToDeviceDto(Device device) {
-        return DeviceDto.builder()
-                .id(device.getId())
-                .name(device.getName())
-                .type(device.getType())
-                .location(device.getLocation())
-                .userId(device.getUserId())
-                .build();
+        return new DeviceDto(
+                device.getId(),
+                device.getName(),
+                device.getType(),
+                device.getLocation(),
+                device.getUserId()
+        );
     }
 }

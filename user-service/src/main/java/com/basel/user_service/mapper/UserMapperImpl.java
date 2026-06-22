@@ -9,37 +9,37 @@ public class UserMapperImpl implements UserMapper {
 
     @Override
     public User mapToUser(UserDto dto) {
-        return User.builder()
-                .name(dto.getName())
-                .surname(dto.getSurname())
-                .email(dto.getEmail())
-                .address(dto.getAddress())
-                .alerting(dto.isAlerting())
-                .energyAlertingThreshold(dto.getEnergyAlertingThreshold())
-                .build();
+        User user = new User();
+        user.setName(dto.name());
+        user.setSurname(dto.surname());
+        user.setEmail(dto.email());
+        user.setAddress(dto.address());
+        user.setAlerting(dto.alerting());
+        user.setEnergyAlertingThreshold(dto.energyAlertingThreshold());
+        return user;
     }
 
     @Override
     public UserDto mapToUserDto(User user) {
-        return UserDto.builder()
-                .id(user.getId())
-                .name(user.getName())
-                .surname(user.getSurname())
-                .email(user.getEmail())
-                .address(user.getAddress())
-                .alerting(user.isAlerting())
-                .energyAlertingThreshold(user.getEnergyAlertingThreshold())
-                .build();
+        return new UserDto(
+                user.getId(),
+                user.getName(),
+                user.getSurname(),
+                user.getEmail(),
+                user.getAddress(),
+                user.isAlerting(),
+                user.getEnergyAlertingThreshold()
+        );
     }
 
     @Override
     public User mapToExistingUser(User user, UserDto dto) {
-        user.setName(dto.getName());
-        user.setSurname(dto.getSurname());
-        user.setEmail(dto.getEmail());
-        user.setAddress(dto.getAddress());
-        user.setAlerting(dto.isAlerting());
-        user.setEnergyAlertingThreshold(dto.getEnergyAlertingThreshold());
+        user.setName(dto.name());
+        user.setSurname(dto.surname());
+        user.setEmail(dto.email());
+        user.setAddress(dto.address());
+        user.setAlerting(dto.alerting());
+        user.setEnergyAlertingThreshold(dto.energyAlertingThreshold());
         return user;
     }
 }
